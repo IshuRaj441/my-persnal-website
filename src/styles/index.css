@@ -1,0 +1,44 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import './design-system.css';
+@import './style.css';
+@import './refinements.css';
+@import './modern.css';
+@import './blog.css';
+@import './projects.css';
+@import './services.css';
+@import './reset.css';
+
+/* Critical CSS for above-the-fold content */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; }
+.hero { padding: 10rem 0 8rem; position: relative; overflow: hidden; }
+
+/* Journey Section Hover Effects */
+#my-journey img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    transform-origin: center !important;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+#my-journey img:hover {
+    transform: translateY(-5px) scale(1.03) !important;
+    box-shadow: var(--shadow-md) !important;
+    z-index: 1;
+}
+
+/* First image specific adjustments */
+#my-journey .container > div:first-child img:first-child {
+    transform: rotate(-1deg);
+}
+
+#my-journey .container > div:first-child img:first-child:hover {
+    transform: rotate(0) translateY(-5px) scale(1.03) !important;
+}
+
+/* Smooth scroll behavior */
+html { scroll-behavior: smooth; }
+
+/* Theme toggle transition */
+body, .navbar, .card, .service-card, .testimonial-card {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
