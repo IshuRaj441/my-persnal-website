@@ -125,13 +125,13 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <motion.a
-                    href="#contact"
+                  <motion.button
+                    onClick={() => navigate('/contact')}
                     className="inline-flex items-center text-accent hover:text-accent/80 font-medium transition-colors"
                     whileHover={{ x: 5 }}
                   >
                     Get Started <i className="fas fa-arrow-right ml-2"></i>
-                  </motion.a>
+                  </motion.button>
                 </Card>
               </motion.div>
             ))}

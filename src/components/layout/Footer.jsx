@@ -1,8 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { fadeUp } from '../../animations/motionVariants';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleQuickLinkClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <motion.footer
       initial="hidden"
@@ -32,16 +39,21 @@ const Footer = () => {
           <div>
             <h4 className="text-textPrimary font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Projects', 'About', 'Services', 'Contact'].map((item) => (
-                <li key={item}>
-                  <motion.a
-                    href={`#${item.toLowerCase()}`}
-                    className="text-textSecondary hover:text-netflixRed transition-colors duration-200"
+              {[
+                { label: 'Projects', path: '/projects' },
+                { label: 'About', path: '/about' },
+                { label: 'Services', path: '/services' },
+                { label: 'Contact', path: '/contact' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <motion.button
+                    onClick={() => handleQuickLinkClick(item.path)}
+                    className="text-textSecondary hover:text-netflixRed transition-colors duration-200 text-left w-full"
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    {item}
-                  </motion.a>
+                    {item.label}
+                  </motion.button>
                 </li>
               ))}
             </ul>
@@ -51,15 +63,21 @@ const Footer = () => {
           <div>
             <h4 className="text-textPrimary font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
-              {['LinkedIn', 'GitHub', 'Twitter'].map((social) => (
+              {[
+                { name: 'LinkedIn', url: 'https://linkedin.com/in/ishuraj' },
+                { name: 'GitHub', url: 'https://github.com/ishuraj' },
+                { name: 'Twitter', url: 'https://twitter.com/ishuraj' }
+              ].map((social) => (
                 <motion.a
-                  key={social}
-                  href="#"
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-textSecondary hover:text-netflixRed transition-colors duration-200"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <span className="text-sm font-medium">{social}</span>
+                  <span className="text-sm font-medium">{social.name}</span>
                 </motion.a>
               ))}
             </div>
