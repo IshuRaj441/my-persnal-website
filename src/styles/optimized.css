@@ -1,0 +1,303 @@
+/* 🚀 PERFORMANCE-OPTIMIZED CSS */
+/* Minimal luxury styling with GPU acceleration */
+
+/* GPU-accelerated animations only */
+@layer utilities {
+  /* Only animate transform and opacity */
+  .animate-optimized {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Reduced blur effects */
+  .blur-sm {
+    filter: blur(2px);
+  }
+  
+  .blur-md {
+    filter: blur(4px);
+  }
+  
+  /* Avoid expensive backdrop-blur on mobile */
+  @media (max-width: 768px) {
+    .backdrop-blur-xl {
+      backdrop-filter: none;
+    }
+    
+    .backdrop-blur-lg {
+      backdrop-filter: none;
+    }
+  }
+  
+  /* Optimized shadows */
+  .shadow-glow-sm {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+  }
+  
+  .shadow-glow-md {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .shadow-glow-lg {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  }
+  
+  /* Red glow variants */
+  .shadow-glow-red-sm {
+    box-shadow: 0 0 10px rgba(255, 30, 30, 0.2);
+  }
+  
+  .shadow-glow-red-md {
+    box-shadow: 0 0 20px rgba(255, 30, 30, 0.3);
+  }
+  
+  .shadow-glow-red-lg {
+    box-shadow: 0 0 30px rgba(255, 30, 30, 0.4);
+  }
+}
+
+/* Optimized glass morphism - reduced blur */
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Mobile-optimized glass */
+  @media (max-width: 768px) {
+    .glass-card {
+      backdrop-filter: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+  
+  /* Optimized gradients */
+  .gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-red {
+    background: linear-gradient(135deg, #ff1e1e, #dc2626);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Performance optimizations */
+@layer base {
+  /* Optimize images */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Smooth scrolling with performance */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Reduce paint on scroll */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Disable hover effects on touch devices */
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .hover\:shadow-xl:hover {
+    box-shadow: none;
+  }
+  
+  /* Reduce animations */
+  .animate-pulse {
+    animation: none;
+  }
+  
+  /* Simplify gradients */
+  .gradient-radial {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  }
+}
+
+/* High-DPI optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Crisper text rendering */
+  .text-crisp {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Loading states */
+@layer utilities {
+  .skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+  
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* Dark skeleton */
+  .skeleton-dark {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+    background-size: 200% 100%;
+    animation: loading-dark 1.5s infinite;
+  }
+  
+  @keyframes loading-dark {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+
+/* Optimized animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fast animations for better performance */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Container queries for responsive components */
+@container (max-width: 768px) {
+  .container-responsive {
+    padding: 1rem;
+  }
+}
+
+/* CLS Prevention - Dimension Containment */
+@layer utilities {
+  /* Prevent layout shift with aspect ratios */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  .aspect-photo {
+    aspect-ratio: 4 / 3;
+  }
+  
+  /* Contain layout for dynamic content */
+  .layout-contain {
+    contain: layout;
+  }
+  
+  .size-contain {
+    contain: size;
+  }
+  
+  .paint-contain {
+    contain: paint;
+  }
+  
+  /* Reserve space for images */
+  .img-placeholder {
+    background: #374151;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Prevent font swap layout shift */
+  .font-display {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-display: swap;
+  }
+  
+  /* Skeleton loading to prevent CLS */
+  .skeleton-text {
+    height: 1em;
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 0.25em;
+    margin-bottom: 0.5em;
+  }
+  
+  .skeleton-text.title {
+    height: 2em;
+    width: 70%;
+  }
+  
+  .skeleton-text.subtitle {
+    height: 1.5em;
+    width: 50%;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    color: black;
+    background: white;
+  }
+}
