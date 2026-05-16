@@ -138,11 +138,10 @@ const SectionBackgroundEffects = () => {
       }
     };
     
-    containerRef.current.addEventListener('mousemove', handleMouseMove);
+    const container = containerRef.current;
+    container.addEventListener('mousemove', handleMouseMove);
     return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener('mousemove', handleMouseMove);
-      }
+      container.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 

@@ -255,7 +255,7 @@ const Home = () => {
                   >
                     <motion.img
                       src={`/images/My_journey/${image}`}
-                      alt={`Journey Image ${index + 1}`}
+                      alt={`Journey ${index + 1}`}
                       className="w-full h-48 object-cover"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.4 }}
@@ -362,7 +362,7 @@ const Home = () => {
                   >
                     <motion.img
                       src={`/images/My_journey/${image}`}
-                      alt={`Journey Image ${index + 3}`}
+                      alt={`Journey ${index + 3}`}
                       className="w-full h-48 object-cover"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.4 }}

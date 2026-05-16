@@ -1,11 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  cinematicCardHover, 
-  cinematicFadeUp, 
-  cinematicHover,
-  neonGlow,
-  liquidCard 
+  cinematicFadeUp,
+  neonGlow
 } from '../../animations/cinematicVariants';
 
 // 🎬 CINEMATIC CARD COMPONENT
