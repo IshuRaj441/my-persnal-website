@@ -1,0 +1,19 @@
+{
+  "short_name": "Ishuraj",
+  "name": "Ishuraj | Freelance Developer & Consultant",
+  "description": "Professional portfolio of Ishuraj, a freelance developer creating impactful software solutions. Specializing in web development, automation, and digital transformation.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "developer", "freelance", "consulting"],
+  "lang": "en"
+}
